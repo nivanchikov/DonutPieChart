@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A3077BF2299A48F0007AFD6D /* DonutPieChartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3077BF1299A48F0007AFD6D /* DonutPieChartApp.swift */; };
-		A3077BF4299A48F0007AFD6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3077BF3299A48F0007AFD6D /* ContentView.swift */; };
+		A3077BF4299A48F0007AFD6D /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3077BF3299A48F0007AFD6D /* PieChartView.swift */; };
 		A3077BF6299A48F3007AFD6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3077BF5299A48F3007AFD6D /* Assets.xcassets */; };
 		A3077BFA299A48F3007AFD6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3077BF9299A48F3007AFD6D /* Preview Assets.xcassets */; };
+		A3077C01299A492F007AFD6D /* PieChartSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3077C00299A492F007AFD6D /* PieChartSliceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A3077BEE299A48F0007AFD6D /* DonutPieChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutPieChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3077BF1299A48F0007AFD6D /* DonutPieChartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutPieChartApp.swift; sourceTree = "<group>"; };
-		A3077BF3299A48F0007AFD6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A3077BF3299A48F0007AFD6D /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		A3077BF5299A48F3007AFD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3077BF7299A48F3007AFD6D /* DonutPieChart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DonutPieChart.entitlements; sourceTree = "<group>"; };
 		A3077BF9299A48F3007AFD6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A3077C00299A492F007AFD6D /* PieChartSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartSliceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				A3077BF1299A48F0007AFD6D /* DonutPieChartApp.swift */,
-				A3077BF3299A48F0007AFD6D /* ContentView.swift */,
+				A3077BF3299A48F0007AFD6D /* PieChartView.swift */,
+				A3077C00299A492F007AFD6D /* PieChartSliceView.swift */,
 				A3077BF5299A48F3007AFD6D /* Assets.xcassets */,
 				A3077BF7299A48F3007AFD6D /* DonutPieChart.entitlements */,
 				A3077BF8299A48F3007AFD6D /* Preview Content */,
@@ -139,8 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3077BF4299A48F0007AFD6D /* ContentView.swift in Sources */,
+				A3077BF4299A48F0007AFD6D /* PieChartView.swift in Sources */,
 				A3077BF2299A48F0007AFD6D /* DonutPieChartApp.swift in Sources */,
+				A3077C01299A492F007AFD6D /* PieChartSliceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import SwiftUI
 struct DonutPieChartApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PieChartView()
         }
     }
 }
