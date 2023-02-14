@@ -19,26 +19,39 @@ struct PieChartView: View {
     // MARK: - Body
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                ZStack {
-                    ForEach(0 ..< slices.count, id: \.self) { index in
-                        PieChartSliceView(pieSliceData: slices[index])
-                    }
-                    .frame(width: geometry.size.width, height: geometry.size.width)
+		VStack {
+			GeometryReader { geometry in
+				VStack {
+					ZStack {
+						ForEach(0 ..< slices.count, id: \.self) { index in
+							PieChartSliceView(pieSliceData: slices[index])
+						}
+						.frame(width: geometry.size.width, height: geometry.size.width)
 
-                    /// this circle is just a hack to create a donut pie chart effect
-                    Circle()
-                        .fill(Color.black)
-                    /// In this hack, this ensures that the difference between outer
-                    /// and inner chart radius would always be 84 px.
-                        .frame(width: geometry.size.width - 168, height: geometry.size.width  - 168)
-                    }
-            }
-            .onAppear() {
-                generateRandomSlices()
-            }
-        }
+						/// this circle is just a hack to create a donut pie chart effect
+						Circle()
+							.fill(Color.black)
+						/// In this hack, this ensures that the difference between outer
+						/// and inner chart radius would always be 84 px.
+							.frame(width: geometry.size.width - 168, height: geometry.size.width  - 168)
+					}
+				}
+			}
+
+			ZStack {
+				ForEach(0 ..< slices.count, id: \.self) { index in
+					PieChartSliceShape(pieSliceData: slices[index])
+						.fill(slices[index].color)
+						.overlay(
+							PieChartSliceShape(pieSliceData: slices[index])
+								.stroke(lineWidth: 2.0)
+						)
+				}
+			}
+		}
+		.onAppear() {
+			generateRandomSlices()
+		}
         .padding(24)
         .background(.black)
     }
@@ -62,12 +75,12 @@ struct PieChartView: View {
             totalAmount += Double(amount)
         }
         for (index, amount) in amounts.enumerated() {
-            let degrees: Double = Double(amount) * 360 / totalAmount
+			let degrees: Double = Double(amount) * .pi * 2.0 / totalAmount
             tempSlices.append(PieSliceData(
-                startAngle: Angle(degrees: endDegree),
+                startAngle: Angle(radians: endDegree),
                 /// FYI: always assigning the endAngle to 359 for the last slice ensures that
                 /// the gap between it and the first one is the same as between the rest of the slices.
-                endAngle: Angle(degrees: index == amounts.count - 1 ? 359.5 : endDegree + degrees),
+				endAngle: Angle(radians: index == amounts.count - 1 ? 2 * .pi : endDegree + degrees),
                 color: colors[index]))
 
             endDegree += degrees
